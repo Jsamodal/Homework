@@ -1,0 +1,82 @@
+
+let horLine = '━'
+let topLeft = '┏'
+let topRight = '┓'
+let botLeft  = '┗'
+let botRight = '┛'
+let verLine = '┃'
+let rightBorder = '┫'
+let leftBorder = '┣'
+
+// DRAWLINE FUNCTION//
+
+let drawLine = (num)=>{
+    return(horLine.repeat(num))
+}
+console.log(drawLine(9))
+console.log(drawLine(3))
+
+console.log('x'.repeat(20))
+//DRAWBARS AROUND FUNCTION//
+
+let name = 'My name is JR'
+
+let drawBarsAround = (str) => {
+return(`${verLine}${str}${verLine}`)
+}
+
+console.log(drawBarsAround(name))
+
+console.log('x'.repeat(20))
+//DRAW TOP, BOTTOM, AND MIDDLE BORDER FUNCTIONS//
+
+let topBorder = (num)=> {
+    return(`${topLeft}${horLine.repeat(num)}${topRight}`)
+}
+
+let midBorder = (num)=> {
+    return(`${leftBorder}${horLine.repeat(num)}${rightBorder}`)
+}
+
+let botBorder = (num)=> {
+    return(`${botLeft}${horLine.repeat(num)}${botRight}`)
+}
+
+console.log(topBorder(9))
+console.log(' ')
+console.log(midBorder(9))
+console.log(' ')
+console.log(botBorder(9))
+
+console.log('x'.repeat(20))
+// BOX IT FUNCTION//
+
+
+let name1 = process.argv[2]
+let name2 = process.argv[3]
+let name3= process.argv[4]
+
+let nameArr = [name1, name2, name3]
+
+let boxIt = (name) => {
+   let arr = []
+   let str = ''
+   if(typeof name === typeof arr) {
+return `${topLeft}${horLine.repeat(10)}${topRight}
+${verLine}${name[0]}${verLine}
+${leftBorder}${horLine.repeat(10)}${rightBorder}
+${verLine}${name[1]}${verLine}
+${leftBorder}${horLine.repeat(10)}${rightBorder}
+${verLine}${name[2]}${verLine}
+${botLeft}${horLine.repeat(10)}${botRight}`
+        } else if (typeof name === typeof str) {
+    return `${topLeft}${horLine.repeat(10)}${topRight}
+${verLine}${name}${verLine}
+${botLeft}${horLine.repeat(10)}${botRight}`
+   }
+}
+console.log(boxIt(nameArr))
+
+console.log('x'.repeat(20))
+
+console.log(boxIt(name1))
